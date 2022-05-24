@@ -107,10 +107,43 @@ introduce('yoo',24); //함수에서 지정했기 때문에 3번째 매개변수�
 ***
 
 ## 범위, 영역 (scope)
+```js
+let x = 3; //글로벌 변수 , 전역 변수 (global variable)
+function myFunction() { //블록문 (block statement)
+  let x = 3; //로컬변수, 지역변수(local variable)
+  console.log(x);
+};
+```
+-블록문에서 선언한 변수(로컬변수)는 블록문 안에서만 할당된다
 
+***
 
+## 상수(constant)
+```js
+const pi = 3.14; // 변하지 않는 값을 상수라고 한다
+let radius = 0;
+```
+-상수는 이름을 지을 때 대문자와 (_)로 표기해준다
 
+```js
+// 싱수 이해
+const X = 1500;
 
+function myFunction() {
+  X = 1500 * 1.5;
+  console.log(X);
+}
+
+myFunction();
+console.log(X);
+=> error 
+//3번 줄부터 myFunction이라는 함수를 선언하고 있는데요. 함수의 동작 부분에서 X의 값을 변경하려고 하고 있습니다.
+
+//그런데 X는 const키워드로 선언한 상수이기 때문에 값의 변경이 불가합니다.
+```
+
+***
+mvdslfkjf
 
 
 
