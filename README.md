@@ -73,6 +73,45 @@ console.log(`생년월일은 ${year}년 ${month}월 ${day}일 입니다`);
 -null : 의도적으로 표현할 때 =>사용하는 값  
 -undefined : 값이 없다는 것을 =>확인하는 값
 
+***
+
+## 증가 , 감소 연산자
+```js
+// 다음 세 줄은 같은 의미입니다.
+x = x + 1;
+x += 1;
+x++;
+```
+
+```js
+// 다음 세 줄은 같은 의미입니다.
+x = x - 1;
+x -= 1;
+x--;
+```
+
+***
+
+## 옵셔널 파라미터(optional prapmeters)
+-파라미터 값에 미리 값을 할당할 수 있다
+```js
+function introduce(name,age,nationality='한국') {
+  console.log {name}
+  console.log {age}
+  console.log {nationality}
+};
+introduce('yoo',24,'미국'); //값을 모두 할당한 경우는 미국 할당값이 나옴
+introduce('yoo',24); //함수에서 지정했기 때문에 3번째 매개변수를 꼭 지정해주지 않아도 된다
+```
+
+***
+
+## 범위, 영역 (scope)
+
+
+
+
+
 
 
 
