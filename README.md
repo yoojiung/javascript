@@ -143,7 +143,77 @@ console.log(X);
 ```
 
 ***
-mvdslfkjf
+
+## if문
+```js
+if (조건부분) {
+  동작부분
+} else {
+  조건이 아니라면
+}
+```
+
+***
+
+## else if
+```js
+if (조건부분) {
+  동작부분
+} else if(조건부분) {
+  동작부분
+}
+ else {
+  위 조건이 모두 아니라면
+}
+```
+
+***
+
+## switch문
+```js
+
+switch (비교할값) {
+  case 조건값_1:
+    동작부분;
+    break
+  case 조건값_2:
+    동작부분;
+    break
+  default; //else 와 비슷하다
+    동작부분;
+}
+```
+
+***
+
+## for 반복문(loop statement)
+```js
+for (초기화부분; 조건부분; 추가동작부분(옵션)) {
+  동작부분
+}
+// ex
+for (let i= 1,i<=10,i++) {
+  console.log("코드잇 최고!");
+}
+```
+
+***
+
+## while 문
+```js
+while (조건부분) {
+  동작부분
+}
+// ex
+let i =1;
+// while문은 글로벌 변수로 지정
+while (i<=10) {
+  console.log('test')
+}
+```
+- 글로벌 변수를 인수처럼 쓸 수 있기 때문에 상황에 따라서 for문 과 while문을 적절히 섞어서 쓸 것
+
+
 
 
 
