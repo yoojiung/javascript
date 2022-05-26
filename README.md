@@ -213,7 +213,49 @@ while (i<=10) {
 ```
 - 글로벌 변수를 인수처럼 쓸 수 있기 때문에 상황에 따라서 for문 과 while문을 적절히 섞어서 쓸 것
 
+***
 
+## break ,continue
+```js
+//break
+let i= 1;
+
+while (i<10) {
+  console.log(i);
+  if (i===7) {
+    break; // 정지
+  }
+  i++;
+}
+
+for (let i= 1;i<10;i++) {
+  console.log(i)
+  if (i===7) {
+    break; //for문을 빠져나옴
+  }
+}
+```
+
+```js
+//continue
+for (let i= 1;i<10;i++) {
+  if (i%2===0) {
+    continue;  //  if문을 건너뜀. 그래서 2의배수를 제외한다 // 조건부분을 무시하고 추가부분을 실행
+  }
+  console.log(i) // 1,3,5,7,9
+}
+
+let i= 1;
+while(i<=10) {
+  if (i%2==0) {
+    i++; // i++; 를 넣어주는 이유: while문에는 추가부분이 없기 때문에 
+    continue; 
+  }
+  console.log(i)
+  i++;
+}
+
+```
 
 
 
