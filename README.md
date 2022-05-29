@@ -279,7 +279,7 @@ document.getElementsByClassName('');
 3. 배열의 기본 메소드를 사용할 수 없다.  
 4. Array.isArray(유사배열)은 false다.  
 
->tips
+>tips  
 유사 배열은 위의 특징들을 가진 대부분의 형태를 가리키는 포괄적인 개념이기 때문에 정말 다양한 형태로 존재할 수 있습니다.
 예를 들어 지난 시간에 봤던 HTMLCollection의 경우 for..of 문을 활용하는 데 문제는 없었지만 어떤 유사 배열의 경우에는 for..of문을 활용할 수 없는 경우도 있습니다.
 배열의 기본 메소드를 사용할 수 없다고 했지만, 직접 구현해서 마치 배열처럼 사용할 수 있도록 만들 수도 있습니다.
@@ -306,4 +306,17 @@ btn.onclick= function () { //이벤트 핸들러
   console.log('Hello')
 }
 ```
+
+***
+
+>정리  
+
+메소드 | 의미 | 결과
+--|--|--
+document.getElementById('id') |HTML id속성으로 태그 선택하기|	id에 해당하는 태그 하나 
+document.getElementsByClassName('class')|HTML class속성으로 태그 선택하기|class에 해당하는 태그 모음(HTMLCollection)
+document.getElementsByTagName('tag')|HTML 태그 이름으로 태그 선택하기|tag에 해당하는 태그 모음(HTMLCollection)
+document.querySelector('css')|css 선택자로 태그 선택하기|css 선택자에 해당하는 태그 중 가장 첫번째 태그 하나
+document.querySelectorAll('css')|css 선택자로 태그 선택하기|	css 선택자에 해당하는 태그 모음(NodeList)
+
 
