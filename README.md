@@ -257,6 +257,53 @@ while(i<=10) {
 
 ```
 
+# javascript deep
 
+## id로 태그 선택하기
+```js
+const myTag = document.getElementById(id이름);
+```
+- 존재하지 않는 id값으로 태그를 선택하면 null값을 반환한다
 
+***
+
+## class 태그 선택하기
+```js
+document.getElementsByClassName('');
+```
+***
+
+## 유사배열(Array-like object)
+1. 숫자 형태의 indexing이 가능하다.  
+2. length 프로퍼티가 있다.  
+3. 배열의 기본 메소드를 사용할 수 없다.  
+4. Array.isArray(유사배열)은 false다.  
+
+>tips
+유사 배열은 위의 특징들을 가진 대부분의 형태를 가리키는 포괄적인 개념이기 때문에 정말 다양한 형태로 존재할 수 있습니다.
+예를 들어 지난 시간에 봤던 HTMLCollection의 경우 for..of 문을 활용하는 데 문제는 없었지만 어떤 유사 배열의 경우에는 for..of문을 활용할 수 없는 경우도 있습니다.
+배열의 기본 메소드를 사용할 수 없다고 했지만, 직접 구현해서 마치 배열처럼 사용할 수 있도록 만들 수도 있습니다.
+하지만 직접 유사 배열을 만드는 게 아니라 이미 만들어진 유사 배열에 접근하는 경우에는 대부분 위 4가지 특징을 모두 가지고 있으니깐 잘 기억해 두시면 좋을 것 같습니다 :)  
+
+>getElementsByClassName 메소드를 통해 존재하지 않는 class 값으로 태그를 선택하게 되면 그 값은 빈 HTMLCollelction이 됩니다. 
+
+***
+
+## css 선택자
+```js
+document.querySelector('css'); //한개 선택
+document.querySelectorAll('css'); //여러개 선택
+```
+
+***
+
+## 이벤트(event)와 버튼 클릭
+```js
+const btn = document.querySelector('#myBtn');
+
+//이벤트 핸들링(event handling)
+btn.onclick= function () { //이벤트 핸들러
+  console.log('Hello')
+}
+```
 
