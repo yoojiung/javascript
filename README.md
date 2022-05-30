@@ -257,6 +257,73 @@ while(i<=10) {
 
 ```
 
+***
+
+## 객체(object)
+- {key:value}
+- Property Name 주의 사항  
+ 1.첫 번째 글자는 반드시 문자,밑줄,달러기호 중 하나로 시작  
+ 2. 띄어쓰기 금지  
+ 3. 하이픈 금지  
+
+
+### 데이터 접근하기
+```js
+ex ) 
+let codeit = {
+  name:'lulu',
+  age:21,
+  isVeryNice : true
+  bestCourse: {
+    title:'leesu',
+    age:24
+  }
+}
+// 점 표기법 (objectName.propertyName)
+console.log(codeit.name);
+
+// 대괄호 표기법(objectName['propertyName'] )
+console.log(codeit['isVeryNice'])
+
+// 객체 안에 객체 접근
+console.log(codeit.bestCourse.title);
+
+// 데이터 추가하기
+// 아래와 같이 추가하면 된다
+codeit.lang = 'java';
+
+// 데이터 삭제하기
+delete codeit.age;
+
+// 'propertyName' in object
+// 객체 안에 프로포터리 있는 지 확인 
+// boolean 값 return
+console.log('name' in codeit)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # javascript deep
 
 ## id로 태그 선택하기
