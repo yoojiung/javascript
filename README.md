@@ -319,4 +319,110 @@ document.getElementsByTagName('tag')|HTML 태그 이름으로 태그 선택하�
 document.querySelector('css')|css 선택자로 태그 선택하기|css 선택자에 해당하는 태그 중 가장 첫번째 태그 하나
 document.querySelectorAll('css')|css 선택자로 태그 선택하기|	css 선택자에 해당하는 태그 모음(NodeList)
 
+***
 
+## window: 전역객체 (global object)
+[window mdn](https://developer.mozilla.org/ko/docs/Web/API/Window)
+
+***
+
+## DOM: 문서객체모델(document object model)
+- html tags를 자유롭게 자바스크립트에서 사용할 수 있다 
+
+***
+
+## console vs dir
+1. 출력하는 자료형이 다르다  
+- dir메소드는 문자열 표시 형식으로 콘솔에 출력
+
+2. log는 값 자체, dir은 객체 속성에  
+- log 메소드는 파라미터로 전달받은 값을 위주로 출력하는 반면, dir 메소드는 객체의 속성을 좀 더 자세하게 출력합니다.
+
+3. log는 여러 개 , dir은 하나만  
+- log 메소드는 여러 값을 쉼표로 구분해서 전달하면 전달받은 모든 값을 출력하는 반면, dir 메소드는 여러 값을 전달하더라도 첫 번째 값만 출력합니다.  
+
+4. DOM  
+- log 메소드는 대상을 HTML 형태로 출력하고, 객체의 속성에 좀 더 중점을 둔 dir 메소드는 대상을 객체 형태로 출력합니다.
+
+***
+
+## DOM TREE
+[DOM트리](https://dom.spec.whatwg.org/#node)
+- 객체 : 노드(node)  
+- 태그를 표현하는 노드는 요소노드(element node)  
+- 문자를 표현하는 노드는 텍스트노드(text node)  
+- 텍스트노드는 요소의 자식 노드이며 , 자식노드를 가질 수 없다 
+
+### node 선택
+프로퍼티 | 유형 | 결과
+--|--|--
+element.children|	자식 요소 노드|	element의 자식 요소 모음(HTMLCollection)
+element.firstElementChild	|자식 요소 노드|	element의 첫 번째 자식 요소 하나
+element.lastElementChild |	자식 요소 노드|	element의 마지막 자식 요소 하나
+element.parentElement |	부모 요소 노드 |	element의 부모 요소 하나
+element.previousElementSibling |	형제 요소 노드|	element의 이전(previous) 혹은 좌측(left)에 있는 요소 하나
+element.nextElementSibling	|형제 요소 노드	|element의 다음(next) 혹은 우측(right)에 있는 요소 하나
+
+### 모든노드 이동 프로퍼티
+프로퍼티 |	유형	| 결과
+--|--|--
+node.childNodes |	자식 노드	|node의 자식 노드 모음(NodeList)
+node.firstChild |	자식 노드	| node의 첫 번째 자식 노드 하나
+node.lastChild |	자식 노드 |	node의 마지막 자식 노드 하나
+node.parentNode |	부모 노드 |	node의 부모 요소 하나
+node.previousSibling | 형제 노드 |	node의 이전(previous) 혹은 좌측(left)에 있는 노드 하나
+node.nextSibling |	형제 노드 |	node의 다음(next) 혹은 우측(right)에 있는 노드 하나
+
+## 요소 노드 주요 프로퍼티
+1. element.innerHTML  
+- 요소 노드 내부의 HTML 코드를 문자열로 리턴해 줍니다. (내부에 있는 줄 바꿈이나 들여쓰기 모두 포함합니다.)  
+```js
+const myTag = document.querySelector('#list-1');
+
+// innerHTML
+console.log(myTag.innerHTML);
+```
+- 요소 안의 정보를 확인할 수도 있지만, 내부의 HTML 자체를 수정할 때 좀 더 자주 활용됩니다. (내부에 있던 값을 완전히 새로운 값으로 교체하기 때문에 주의해서 사용해야해요!)  
+```js
+const myTag = document.querySelector('#list-1');
+
+// innerHTML
+console.log(myTag.innerHTML);
+myTag.innerHTML = '<li>Exotic</li>';
+console.log(myTag.innerHTML);
+```
+
+2. element.outerHTML  
+- 요소 노드 자체의 전체적인 HTML 코드를 문자열로 리턴해줍니다. (내부에 있는 줄 바꿈이나 들여쓰기 모두 포함합니다.)
+```js
+const myTag = document.querySelector('#list-1');
+
+// outerHTML
+console.log(myTag.outerHTML);
+```
+- outerHTML은 새로운 값을 할당할 경우 요소 자체가 교체되어 버리기 때문에 주의해야 합니다.
+```js
+const myTag = document.querySelector('#list-1');
+
+// outerHTML
+console.log(myTag.outerHTML);
+myTag.outerHTML = '<ul id="new-list"><li>Exotic</li></ul>';
+```
+
+3. element.textContent
+- 요소 안의 내용들 중에서 HTML 태그 부분은 제외하고 텍스트만 가져옵니다. (내부에 있는 줄 바꿈이나 들여쓰기 모두 포함합니다.)
+```js
+const myTag = document.querySelector('#list-1');
+
+// textContext
+console.log(myTag.textContent);
+```
+- 새로운 값을 할당하면 innerHTML과 마찬가지로 내부의 값을 완전히 새로운 값으로 교체 합니다.
+```js
+const myTag = document.querySelector('#list-1');
+
+// textContext
+console.log(myTag.textContent);
+myTag.textContent = 'new text!';
+```
+- 하지만 textContent는 말그대로 텍스트만 다루기 때문에, 특수문자도 그냥 텍스트로 처리한다는 점, 꼭 기억해주세요!
