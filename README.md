@@ -266,6 +266,7 @@ while(i<=10) {
  2. 띄어쓰기 금지  
  3. 하이픈 금지  
 
+***
 
 ### 데이터 접근하기
 ```js
@@ -300,6 +301,78 @@ delete codeit.age;
 // boolean 값 return
 console.log('name' in codeit)
 ```
+
+***
+
+## for..in
+```js
+let codeit = {
+  name:'codeit',
+  bornYear:2020,
+  isVeryNice:true,
+  worstCourse:null,
+  bestCourse:'javascript'
+}
+
+for (let key in codeit) {
+  console.log(key);
+  console.log(codeit[key])
+}
+```
+
+***
+
+## Date 객체
+```js
+// 데이트객체 생성
+let myDate = new Date();
+//요일, 월, 일, 년도, 시간, 시긴대 순서로 출력
+console.log(myDate);
+// +1000밀리초 추가 
+let myDate = new Date(1000);
+// new Date('YYYY-MM--DD')
+let myDate = new Date(2020-02-11);
+// new Date(YYYY,MM,DD,HH,mm,ss,ms)
+//  YYYY DD 이 후는 생략가능
+// tips 요일은 1이 월요일이 아닌 0이 월요일이다
+
+let myDate = new Date();
+
+//간단하게 시간 정보 알아내기
+console.log(myDate.toLocaleDateString()); // myDate가 가진 날짜에 대한 정보 (년. 월. 일)
+console.log(myDate.toLocaleTimeString()); // myDate가 가진 시간에 대한 정보 (시:분:초)
+console.log(myDate.toLocaleString()); // myDate가 가진 날짜와 시간에 대한 정보 (년. 월. 일 시:분:초)
+
+// getTime()을 통해서 특정한 날짜로 부터 얼마나 지났는지 확인 할 수 있다
+let myDate = new Date(2017,4,18,19,11,16);
+console.log(myDate.getTime())
+
+// 타임스탬프(time stamp) : myDate가 특정한 날로 부터 몇 밀리초가 지났는지 확인
+console.log(timeDiff); // 86400000 (ms)
+console.log(timeDiff / 1000); // 86400 (sec)
+console.log(timeDiff / 1000 / 60) // 1440 (min)
+console.log(timeDiff / 1000 / 60 / 60) // 24 (hour)
+console.log(timeDiff / 1000 / 60 / 60 / 24) // 1 (date)
+```
+
+***
+
+## 배열(Array)
+- 여러개의 데이터를 []를 통해 순서있는 집합이다  
+- 데이터를 가져올 때는 배열[index] 가져 올 것
+```js
+let className = [
+  '유리','나미리','철수','짱구'
+]
+// 데이터 추가
+className[5]='훈이'
+// 데이터 수정
+className[0]='토끼인형'
+// 데이터 삭제
+
+```
+
+
 
 
 
