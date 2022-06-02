@@ -369,8 +369,13 @@ className[5]='훈이'
 // 데이터 수정
 className[0]='토끼인형'
 // 데이터 삭제
-
+// splice(startIndex, deleteCount, item)
+// deleteCount를 설정하지 않으면 startIndex를 제외하고 다 삭제
+// deleteCount 값을 0을 넣는다면 삭제하지 않고 아이템들을 추가할 수 있다
+className.splice(1,1,'짱구엄마','짱구아빠')
+result = ['유리','짱구엄마','짱구아빠','나미리','철수','짱구']
 ```
+
 
 
 
