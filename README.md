@@ -360,6 +360,7 @@ console.log(timeDiff / 1000 / 60 / 60 / 24) // 1 (date)
 ## 배열(Array)
 - 여러개의 데이터를 []를 통해 순서있는 집합이다  
 - 데이터를 가져올 때는 배열[index] 가져 올 것
+- [배열mdnsite](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)
 ```js
 let className = [
   '유리','나미리','철수','짱구'
@@ -376,14 +377,200 @@ className.splice(1,1,'짱구엄마','짱구아빠')
 result = ['유리','짱구엄마','짱구아빠','나미리','철수','짱구']
 ```
 
+***
 
+## 배열 메소드
 
+### 배열의 첫 요소를 삭제 :
+- shift()
+### 배열의 마지막 요소를 삭제 : 
+- pop()
+### 배열의 첫 요소로 값 추가
+- unshift(value)
+```js
+ex)
+className.unshift('채송화')
+```
+### 배열의 마지막 요소로 값 추가
+- push(value)
 
+### 배열에서 특정 값 찾기 (indexOf / lastIndexOf)
+- 배열에서 특정 값을 찾으려면 indexOf 메소드를 사용하면 됩니다. array.indexOf(item)을 하면 array 배열에 item이 포함되어 있는지 확인할 수 있습니다.  
+- 1.만약 포함되어 있다면, item이 있는 인덱스가 리턴됩니다.
+- 2.포함되어 있지 않다면, -1이 리턴됩니다.
+- 3.여러 번 포함되어 있으면, 처음 발견된 인덱스가 리턴됩니다.
 
+### 배열에서 특정 값이 있는지 확인하기 (includes)
+- indexOf/lastIndexOf는 특정 값을 찾아서 해당 값의 index를 알려줍니다.
+하지만, 때로는 그냥 그 값이 배열안에 있는지, 그 여부만 확인하고 싶을 수도 있는데요. 그럴때는 includes 라는 메소드를 활용하면 됩니다.
 
+- array.includes(item)을 하게되면 array배열에 item이 있을 경우 true를, 없을 경우 false를 리턴합니다.
 
+### 배열 뒤집기 (reverse)
+- reverse라는 메소드를 활용하면, 배열의 순서를 뒤집을 수도 있습니다.
 
+***
 
+## for..of반복문
+- for (변수 of 배열) {
+  동작부분;
+}
+
+## 다차원 배열 
+```js
+let twoDimensional = [[1,2][3,4]]
+// 2의 값을 꺼내고 싶다면
+twoDimensional[0][1]
+```
+ 
+***
+
+## 숫자표현법
+```js
+let millionaire = 1000000000;
+let myNumber = 1e9; // 자수 표기법
+// 지수표가법
+// 알파벳 e의 왼쪽에 있는 숫자에 오른쪽에 있는 수만큼 10의 거듭제곱을 곱한다 , 알파벳 e의 오른쪽 값이 음수일 경우에는 이 숫자만큼 10의 거듭제곱으로 나누는 의미
+둘 다 똑같은 표기법이다
+
+console.log(25e5 ===2500000);
+console.log(5.3e3 ===5300);
+console.log(-6.1e8 ===6100000000);
+
+//16진법
+0xff; // 255
+
+//8진법
+0o377 // 255
+
+//2진법
+0b1111111; // 255
+```
+
+***
+
+## 숫자형 메소드
+
+### toFixed(0~100)
+- 파라미터로 받은 값을 소수점을 고정해준다
+- 문자형으로 출력되니 주의 할 것!
+- 숫자형으로 사용할려면 Number 형 변환
+```js
+let myNumber = 0.159157;
+console.log(myNumber.toFixed(2)) //0.16 
+```
+
+### toString(2~36)
+- 파라미터로 받은 값을 2,8,16진법으로 변환
+- 문자형으로 출력되니 주의 할 것
+```js
+let myNumber = 255
+console.log(myNumber.toString(2)) //1111111
+console.log(myNumber.toString(8)) // 377
+console.log(myNumber.toString(10)) // 255
+console.log(myNumber.toString(16)) // ff
+
+// tips !
+// 정수형 값을 출력하고 싶다면 ..을 입력해야 한다
+console.log(255..toString(2)) //1111111
+```
+
+### Tips !
+```js
+console.log(Number(123))
+console.log(+123)
++기호를 넣어주면 자동으로 Number로 형변환이 된다
+```
+
+***
+
+## Math()
+
+### 절댓값 (Absolute Number)
+- Math.abs(x)를 하면 x의 절댓값이 리턴됩니다.
+```js
+console.log(Math.abs(-10));
+console.log(Math.abs(10));
+```
+
+### 최댓값 (Maximum)
+- Math.max 함수에 파라미터로 여러 수를 넘겨주면, 그중 가장 큰 값이 리턴됩니다.
+```js
+console.log(Math.max(2, -1, 4, 5, 0)); //5
+```
+
+### 최솟값 (Minimum)
+- Math.min 함수에 파라미터로 여러 수를 넘겨주면, 그중 가장 작은 값이 리턴됩니다.
+
+### 거듭제곱 (Exponentiation)
+- Math.pow(x, y)를 하면 x의 y승의 결괏값이 리턴됩니다.
+```js
+console.log(Math.pow(2, 3)); //8
+console.log(Math.pow(5, 2)); //25
+```
+
+### 제곱근 (Square Root)
+- Math.sqrt(x)를 하면 x의 제곱근이 리턴됩니다.
+```js
+console.log(Math.sqrt(25)); //5
+console.log(Math.sqrt(49)); //7
+```
+
+### 반올림 (Round)
+- Math.round(x)를 하면 x의 반올림된 값이 리턴됩니다. 소수점 부분이 0.5 이상이면 가장 가까운 정숫값으로 올라가고, 소수점 부분이 0.5 미만이면 가장 가까운 정숫값으로 내려갑니다.
+```js
+console.log(Math.round(2.3)); //2
+console.log(Math.round(2.4)); //2
+console.log(Math.round(2.49)); //2
+console.log(Math.round(2.5)); //3
+console.log(Math.round(2.6)); //3
+```
+
+### 버림과 올림 (Floor and Ceil)
+- Math.floor(x)을 하면 x의 버림 값이, Math.ceil(x)을 하면 x의 올림 값이 리턴됩니다. 이 경우, 소수 부분이 얼마 인지와는 상관이 없습니다.
+```js
+console.log(Math.floor(2.4)); //2
+console.log(Math.floor(2.49)); //2 
+console.log(Math.floor(2.8)); //2
+console.log('-');             //-
+console.log(Math.ceil(2.4)); //3
+console.log(Math.ceil(2.49)); //3
+console.log(Math.ceil(2.8)); //3
+```
+
+### 난수 (Random)
+- Math.random을 하면 0 이상 1 미만의 값이 랜덤으로 리턴됩니다.
+
+***
+
+## 문자열 다루기 
+
+```js
+let myString = 'Hi Codeit!';
+
+//요소탐색
+console.log(myString.indexOf('i')); //앞부터
+console.log(myString.lastindexOf('i')); //뒤부터
+
+//요소접근
+console.log(myString[3]); //i //대괄호표기법
+console.log(myString.charAt(3)) // i //charAt 메소드
+
+//부분 문자열 접근 slice(start, end)
+console.log(myString.slice(0,2)); // Hi
+console.log(myString.slice(3)); // Codeit!
+console.log(myString.slice()); // Hi Codeit!
+
+//문자열 길이
+console.log(myString.length) //9  // length 프로퍼티
+
+//대소문자 변환
+console.log(myString.toUpperCase()) // 대문자
+console.log(myString.toLowerCase()) // 소문자
+
+// 양 끝 공백
+console.log(myString.trim()); // trim 메소드 
+```
 
 
 
