@@ -585,10 +585,6 @@ console.log(myString.trim()); // trim 메소드
 
 
 
-
-
-
-
 # javascript deep
 
 ## id로 태그 선택하기
