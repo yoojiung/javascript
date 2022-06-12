@@ -544,10 +544,7 @@ console.log(Math.ceil(2.8)); //3
 ***
 
 ## 문자열 다루기 
-
 ```js
-let myString = 'Hi Codeit!';
-
 //요소탐색
 console.log(myString.indexOf('i')); //앞부터
 console.log(myString.lastindexOf('i')); //뒤부터
@@ -572,7 +569,21 @@ console.log(myString.toLowerCase()) // 소문자
 console.log(myString.trim()); // trim 메소드 
 ```
 
+***
 
+## 기본형과 참조형
+
+### 기본형 (Primitive Type)
+- Number
+- String 
+- Boolean
+- Null
+- Undefined  
+변수 = 값
+
+### 참조형 (Reference Type)
+- Object  
+변수 = 주소값  
 
 
 
